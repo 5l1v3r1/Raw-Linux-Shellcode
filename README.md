@@ -1,23 +1,27 @@
 # Raw Shellcode
+
 Some C and x86 Assembly code to build a shell-spawning shellcode from scratch
-(No ASLR, Canary, NX, PIE)
+
+Tested on **Linux 2.6.20**
 
 ### Configurations
 
 #### Assemble .s files
 
-`nasm <file.s>`
+`nasm <shellcode.s>`
 
 #### Check shellcode length
 
-`wc -c <file>`
+`wc -c <shellcodeBin>`
 
 #### Check for null bytes
 
-`hexdump -C <file> | grep --color=auto 00`
+`hexdump -C <shellcodeBin> | grep --color=auto 00`
 
-#### Get shellcode environment variable location
+#### Get shellcode env address
 
-`export SHELLCODE=$(cat <file>)`
+**ASLR disabled**
+
+`export SHELLCODE=$(cat <shellcodeBin>)`
 
 `./getenvaddr SHELLCODE ./<vulnProgram>`
