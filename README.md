@@ -2,7 +2,7 @@
 
 Some C and x86 Assembly code to build a shell-spawning shellcode from scratch
 
-Tested on **Linux 2.6.20**
+Tested on **Linux Kernel 2.6.20**
 
 ### Configurations
 

@@ -4,9 +4,7 @@
 
 void lowered_priviledge_function(unsigned char *ptr) {
    char buffer[50];
-
    seteuid(5);  // drop priviledges to uid 5
-
    strcpy(buffer, ptr);
 }
 
