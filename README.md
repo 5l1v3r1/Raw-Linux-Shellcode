@@ -9,10 +9,10 @@ Tested on **Linux Kernel 2.6.20**
 
 #### getenvaddr.c
 
-Get the (shellcode) environment variable address within a program
+Get a (shellcode) environment variable address within a program
 ```
 $ gcc -g -o getenvaddr getenvaddr.c
-$ ./getenvaddr: <env_var> <vuln_program>
+$ ./getenvaddr <env_var> <vuln_program>
 ```
 
 #### exec_shell
