@@ -1,4 +1,4 @@
-# Raw Shellcode
+# Raw Linux Shellcode
 
 Some C and x86 Assembly code to build a shell-spawning shellcode from scratch
 
